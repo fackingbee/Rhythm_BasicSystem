@@ -1,0 +1,21 @@
+﻿<Properties StartupItem="Assembly-CSharp.csproj">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Yama_Script/PointHandler.cs">
+    <Files>
+      <File FileName="Assets/Yama_Script/PointHandler.cs" Line="32" Column="8" />
+      <File FileName="Assets/Yama_Script/ScoreHandler.cs" Line="68" Column="49" />
+      <File FileName="Assets/Yama_Script/AudioManager.cs" Line="16" Column="2" />
+      <File FileName="Assets/Yama_Script/AutoDestroy.cs" Line="1" Column="1" />
+      <File FileName="Assets/Yama_Script/BoardMove.cs" Line="1" Column="1" />
+      <File FileName="Assets/Yama_Script/GameDate.cs" Line="1" Column="1" />
+      <File FileName="Assets/Yama_Script/MiniJSON.cs" Line="1" Column="1" />
+      <File FileName="Assets/Yama_Script/MusicDate.cs" Line="1" Column="1" />
+      <File FileName="Assets/Yama_Script/ScoreCreator.cs" Line="1" Column="1" />
+      <File FileName="Assets/Yama_Script/TimeManager.cs" Line="1" Column="1" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+</Properties>
