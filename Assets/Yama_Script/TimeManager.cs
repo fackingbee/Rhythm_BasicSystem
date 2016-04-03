@@ -13,6 +13,8 @@ public class TimeManager : MonoBehaviour {
 	// テンポ情報
 	public static int tempo;
 
+	public static bool startFlg;
+
 
 	void Awake () {
 		
@@ -30,6 +32,13 @@ public class TimeManager : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
+		if(Input.GetKeyDown(KeyCode.Space)){
+			startFlg = true;
+			AudioManager.AudioPlay ();
+		}
+
+		if(startFlg){
+
 		// timeを更新
 		TimeManager.time += Time.deltaTime;
 
@@ -37,5 +46,7 @@ public class TimeManager : MonoBehaviour {
 		//ProToolsで出力したMIDIは一拍9600tick
 //		TimeManager.tick = (long)(TimeManager.time * (TimeManager.tempo * 9600f) / 60f);
 		TimeManager.tick = (float)(TimeManager.time * (TimeManager.tempo * 9558f) / 60.1523f) ;
+//		Debug.Log (TimeManager.tick);
+		}
 	}
 }

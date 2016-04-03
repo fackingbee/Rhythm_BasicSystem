@@ -77,7 +77,9 @@ public class ScoreCreator : MonoBehaviour {
 			
 			// 指定したTickを超えたものから生成
 			// 『!tmp.isCreated』がないと、既に生成したものに対して再度生成してしまう
-			if (!tmp.isCreated && TimeManager.tick > tmp.tick) {
+//			if (!tmp.isCreated && TimeManager.tick > tmp.tick) {
+			if (!tmp.isCreated) {
+
 
 				// 譜面を生成
 				GameObject scoreObject = Instantiate (scorePrefab);
@@ -88,6 +90,10 @@ public class ScoreCreator : MonoBehaviour {
 
 				// 譜面のXの位置を決定
 				int rand = Random.Range (0, ScoreCreator.ScorePositionXList.Length);
+
+				// SAKで追加したボタンアニメーションの修正
+				scoreObject.tag = (rand + 1).ToString();
+
 				float x = ScoreCreator.ScorePositionXList[rand];
 
 				// 譜面のYの位置を決定

@@ -23,23 +23,33 @@ public class ScoreHandler : MonoBehaviour {
 	// ゲージハンドラー
 	public GageHandler gageHandler;
 
+	Animator anim;
+
+	private GameObject child;
+
 
 	// Use this for initialization
 	void Start () {
 
 		// 生成されてから削除されるまでのTick
-		int tick = 79000;
+//		int tick = 79000;
 
-		Invoke (
-			"AutoDestroy",
-			(60 * tick) / (TimeManager.tempo * 9600f)
-		); 
+//		Invoke (
+//			"AutoDestroy",
+//			(60 * tick) / (TimeManager.tempo * 9600f)
+//		); 
 
 		// PointHandlerのセット
 		pointHandler = FindObjectOfType<PointHandler>();
 
-		// GageHandlerのセット
+		// GageHandlerのセット 
 		gageHandler = FindObjectOfType<GageHandler>();
+
+		string num = gameObject.tag;
+		anim = GameObject.Find ("TouchBar" + num).GetComponent<Animator> ();
+
+		child = gameObject.transform.FindChild ("Score_Image").gameObject;
+		child.SetActive (false);
 
 	}
 	
@@ -48,11 +58,21 @@ public class ScoreHandler : MonoBehaviour {
 
 		//表示順の移動
 		//transform.SetSiblingIndex( (int)transform.localPosition.y);
-	
+
+
+		// SAK：一度先に生成して非アクティブにしておき、ある一定の位置でTrue＝表示させる
+		if(child.transform.position.y <= 150f){
+			child.SetActive (true);
+		}
+		if(child.transform.position.y <= -55f){
+			child.SetActive (false);
+		}
 	}
 
 	// ゲームオブジェクトを削除
 	public void OnScoreClick(){
+
+		anim.SetTrigger ("Touch");
 
 		// Board外の位置を計算
 		// GetComponentInParentは親のコンポーネントを取得する
