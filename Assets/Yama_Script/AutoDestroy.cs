@@ -21,7 +21,7 @@ public class AutoDestroy : MonoBehaviour {
 	// アニメーション終了時のイベント(親を消す処理)
 	public void OnAnimationStopOnParent(){
 		// 削除
-		Destroy( transform.parent.gameObject );
+		Destroy(transform.parent.gameObject);
 
 	}
 }
