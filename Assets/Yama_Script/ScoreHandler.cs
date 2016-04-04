@@ -23,33 +23,37 @@ public class ScoreHandler : MonoBehaviour {
 	// ゲージハンドラー
 	public GageHandler gageHandler;
 
-	Animator anim;
+	// ボタンアニメーションの修正に使う変数
+	Animator buttonAnim;
 
-	private GameObject child;
+	// 一度全て生成してから移動するような修正に使う（後にいらない）
+	private GameObject buttonChild;
 
 
 	// Use this for initialization
 	void Start () {
 
 		// 生成されてから削除されるまでのTick
-//		int tick = 79000;
+		int tick = 79000;
 
-//		Invoke (
-//			"AutoDestroy",
-//			(60 * tick) / (TimeManager.tempo * 9600f)
-//		); 
+		Invoke (
+			"AutoDestroy",
+			(60 * tick) / (TimeManager.tempo * 9600f)
+		); 
 
 		// PointHandlerのセット
 		pointHandler = FindObjectOfType<PointHandler>();
 
 		// GageHandlerのセット 
-		gageHandler = FindObjectOfType<GageHandler>();
+		gageHandler  = FindObjectOfType<GageHandler>();
 
-		string num = gameObject.tag;
-		anim = GameObject.Find ("TouchBar" + num).GetComponent<Animator> ();
 
-		child = gameObject.transform.FindChild ("Score_Image").gameObject;
-		child.SetActive (false);
+		// タッチ時のボタンアニメーションの修正
+		string buttonNum = gameObject.tag;
+		buttonAnim = GameObject.Find ("TouchBar" + buttonNum).GetComponent<Animator> ();
+
+//		buttonChild = gameObject.transform.FindChild ("Score_Image").gameObject;
+//		buttonChild.SetActive (false);
 
 	}
 	
@@ -61,18 +65,18 @@ public class ScoreHandler : MonoBehaviour {
 
 
 		// SAK：一度先に生成して非アクティブにしておき、ある一定の位置でTrue＝表示させる
-		if(child.transform.position.y <= 150f){
-			child.SetActive (true);
-		}
-		if(child.transform.position.y <= -55f){
-			child.SetActive (false);
-		}
+//		if(child.transform.position.y <= 150f){
+//			child.SetActive (true);
+//		}
+//		if(child.transform.position.y <= -55f){
+//			child.SetActive (false);
+//		}
 	}
 
 	// ゲームオブジェクトを削除
 	public void OnScoreClick(){
 
-		anim.SetTrigger ("Touch");
+		buttonAnim.SetTrigger ("Touch");
 
 		// Board外の位置を計算
 		// GetComponentInParentは親のコンポーネントを取得する

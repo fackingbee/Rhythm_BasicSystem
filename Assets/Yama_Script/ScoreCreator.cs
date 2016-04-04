@@ -77,8 +77,8 @@ public class ScoreCreator : MonoBehaviour {
 			
 			// 指定したTickを超えたものから生成
 			// 『!tmp.isCreated』がないと、既に生成したものに対して再度生成してしまう
-//			if (!tmp.isCreated && TimeManager.tick > tmp.tick) {
-			if (!tmp.isCreated) {
+			if (!tmp.isCreated && TimeManager.tick > tmp.tick) {
+//			if (!tmp.isCreated) {
 
 
 				// 譜面を生成

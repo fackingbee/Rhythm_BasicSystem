@@ -45,6 +45,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\Shadow_AfterImage.cs" />
      <Compile Include="Assets\Yama_Script\AudioManager.cs" />
      <Compile Include="Assets\Yama_Script\AutoDestroy.cs" />
      <Compile Include="Assets\Yama_Script\BoardMove.cs" />
@@ -55,6 +56,7 @@
      <Compile Include="Assets\Yama_Script\PointHandler.cs" />
      <Compile Include="Assets\Yama_Script\ScoreCreator.cs" />
      <Compile Include="Assets\Yama_Script\ScoreHandler.cs" />
+     <Compile Include="Assets\Yama_Script\Shadow.cs" />
      <Compile Include="Assets\Yama_Script\TimeManager.cs" />
      <None Include="Assets\Standard Assets\Effects\GlassRefraction\Shaders\GlassStainedBumpDistort.shader" />
      <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\_BloomAndFlares\BlendOneOne.shader" />
